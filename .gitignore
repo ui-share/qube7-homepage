@@ -1,15 +1,58 @@
-# Gradle
-.gradle/
-build/
-
-# Eclipse / IntelliJ
+### Java ###
 *.class
 *.log
-*.idea/
-*.iml
-*.classpath
-*.project
+*.ctxt
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# OS
+### Package ###
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.tar
+*.tgz
+*.xz
+*.zip
+
+### OS ###
 .DS_Store
 Thumbs.db
+
+### IDEs and editors ###
+# VSCode
+.vscode/
+.history/
+*.code-workspace
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+### Gradle ###
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### Logs ###
+logs/
+*.log
+*.out
+
+### Spring Boot ###
+# Application properties with secrets
+application-*.yml
+application-*.yaml
+application-*.properties
