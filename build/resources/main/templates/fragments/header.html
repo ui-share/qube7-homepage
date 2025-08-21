@@ -1,0 +1,28 @@
+<div th:fragment="header">
+	<header>
+		<h1>큐브7</h1>
+		<nav>
+		<a th:href="@{/main}">홈</a> |
+		<a th:href="@{/about}">회사소개</a> |
+		<div class="dropdown">
+			<a href="#">비즈니스 ▾</a>
+			<div class="dropdown-content">
+				<a th:href="@{/business/cs}">고객 맞춤 CS 솔루션</a>
+				<a th:href="@{/business/operation}">비즈니스 운영 솔루션</a>
+				<a th:href="@{/business/o4o}">O4O 채널 솔루션</a>
+				<a th:href="@{/business/mycar}">All-In-One MYCar 솔루션</a>
+			</div>
+		</div> |
+		<div class="dropdown">
+			<a href="#">서비스 ▾</a>
+			<div class="dropdown-content">
+				<a th:href="@{/services/platform}">QR 커뮤니케이션 플랫폼</a>
+				<a th:href="@{/services/app}">QR 커뮤니케이션 App</a>
+			</div>
+		</div> |
+		<a th:href="@{/culture}">기업문화</a> |
+		
+		<a th:href="@{/contact}">문의하기</a>
+		</nav>
+	</header>
+</div>
