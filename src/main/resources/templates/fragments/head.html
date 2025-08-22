@@ -3,29 +3,30 @@
 <head th:fragment="commonHead">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<!-- Page Title & Description -->
 	<title th:text="${pageTitle} ?: '주식회사 큐브7'"></title>
 	<meta name="description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
-
+	<!-- [ REQUIRED ] Favicon -->
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<!-- [ OPTIONAL ] Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 	
-	<!-- Open Graph -->
+	<!-- [ OPTIONAL ] Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:title" th:content="${pageTitle} ?: '큐브7'">
 	<meta property="og:description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
 	<meta property="og:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/main_background.png'">
 	<meta property="og:url" th:content="${pageUrl} ?: 'https://www.qube7.co.kr'">
 
-	<!-- Twitter Card -->
+	<!-- [ OPTIONAL ] Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" th:content="${pageTitle} ?: '큐브7'">
 	<meta name="twitter:description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
 	<meta name="twitter:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/main_background.png'">
 
-	<!-- [ OPTIONAL ] Favicons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	
 
 	<!-- STYLESHEETS -->
 	<!-- [ REQUIRED ] Bootstrap -->
