@@ -1,1 +1,177 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
+/* box-sizing 초기화 */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+caption, table, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+menu, ol, ul {
+	list-style: none;
+}
+/* 기타 초기화 */
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* global */
+html {
+	font-size: 16px; /* 1rem = 16px */
+}
+html,
+body {
+	height: 100%;
+	font-size: 1rem; /* 16px */
+	line-height: 1.5;
+	margin: 0;
+	/* overflow: hidden; */
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/*======================================*/
+/* ROOT */
+/*======================================*/
+:root {
+	/* 기본 색상 */
+	--white: #FFFFFF;
+	--black: #000000;
+	/* 시스템 컬러 */
+	--color-primary: #5A4FCF;
+	--color-secondary: #4B506A;
+	--color-success: #4B830D;
+	--color-warning: #FFB546;
+	--color-error: #D93B30;
+	/* 배경색 */
+	--color-bg: #FFFFFF;
+	--color-bg-alt: #F6F7FC;
+	/* 텍스트 색상 */
+	--text-default: #181A1B;
+	--text-light: #66707A;
+	--text-disabled: #A8B3BD;
+	--text-inverse: #FFFFFF;
+	--text-primary: var(--color-primary);
+	--text-success: var(--color-success);
+	--text-warning: var(--color-warning);
+	--text-error: var(--color-error);
+}
+/* Pretendard Font Family 정의 */
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* .section-block의 공통 스타일 */
+.section-block {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 72px 36px;
+}
+
+/* col, row의 기본 스타일 */
+.col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 16px;
+}
+.row {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 16px;
+}
+
+.section-title {
+	font-size: 46px;
+	font-weight: 700;
+	color: var(--text-default);
+}
+.section-text {
+	font-size: 26px;
+	color: var(--text-light);
+	line-height: 1.5;
+}
+.text-primary {
+	color: var(--text-primary);
+}
+
+.tag {
+	display: inline-block;
+	text-align: center;
+	border-radius: 0.5rem;
+	background-color: var(--color-primary);
+	padding: 1rem 2rem;
+}
+
+.tag-text {
+	display: inline-block;
+	font-size: 22px;
+	font-weight: 600;
+	color: var(--text-inverse);
+}
