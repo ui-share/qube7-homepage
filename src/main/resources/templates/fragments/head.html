@@ -7,22 +7,22 @@
 	<title th:text="${pageTitle} ?: '주식회사 큐브7'"></title>
 	<meta name="description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
 	<!-- [ REQUIRED ] Favicon -->
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
 	<!-- [ OPTIONAL ] Favicons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-	
+	<link rel="apple-touch-icon" sizes="180x180" th:href="@{/apple-touch-icon.png}">
+	<link rel="icon" type="image/png" sizes="32x32" th:href="@{/favicon-32x32.png}">
+	<link rel="icon" type="image/png" sizes="16x16" th:href="@{/favicon-16x16.png}">
+
 	<!-- [ OPTIONAL ] Open Graph -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" th:content="${pageTitle} ?: '큐브7'">
+	<meta property="og:title" th:content="${pageTitle} ?: '주식회사 큐브7'">
 	<meta property="og:description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
 	<meta property="og:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/main_background.png'">
 	<meta property="og:url" th:content="${pageUrl} ?: 'https://www.qube7.co.kr'">
 
 	<!-- [ OPTIONAL ] Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" th:content="${pageTitle} ?: '큐브7'">
+	<meta name="twitter:title" th:content="${pageTitle} ?: '주식회사 큐브7'">
 	<meta name="twitter:description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
 	<meta name="twitter:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/main_background.png'">
 
@@ -32,6 +32,6 @@
 	<!-- [ REQUIRED ] Bootstrap -->
 	
 	<!-- [ REQUIRED ] q7 -->
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 </html>
