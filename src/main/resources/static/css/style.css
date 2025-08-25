@@ -54,7 +54,7 @@
 	--green-500-rgb: 75,131,13;
 	--yellow-500: #FFB546;
 	--yellow-500-rgb: 255,181,70;
-	--violet-500: #5A4FCF;
+	--violet-500: #5A4FCF; /* f */ 
 	--violet-500-rgb: 90,79,207;
 	
 	/* grayScale */
@@ -62,19 +62,19 @@
 	--gray-100-rgb: 248,249,250;
 	--gray-200: #e9ecef;
 	--gray-200-rgb: 233,236,239;
-	--gray-300: #d9d9d9;
+	--gray-300: #d9d9d9; /* f */ 
 	--gray-300-rgb: 217,217,217;
-	--gray-400: #c3c3c5;
+	--gray-400: #c3c3c5; /* f */ 
 	--gray-400-rgb: 195,195,197;
 	--gray-500: #adb5bd;
 	--gray-500-rgb: 173,181,189;
-	--gray-600: #66707A;
+	--gray-600: #666666; /* f */ 
 	--gray-600-rgb: 102,112,122;
 	--gray-700: #4B506A;
 	--gray-700-rgb: 75,80,106;
-	--gray-800: #333333;
+	--gray-800: #333333; /* f */ 
 	--gray-800-rgb: 51,51,51;
-	--gray-900: #222222;
+	--gray-900: #222222; /* f */ 
 	--gray-900-rgb: 34,34,34;
 	
 	
@@ -96,8 +96,8 @@
 	--bg-alt-rgb: 251,251,251;
 
 	/* font */
-	--text-base: var(--gray-900);
-	--text-base-rgb: var(--gray-900-rgb);
+	--text-base: var(--gray-800);
+	--text-base-rgb: var(--gray-800-rgb);
 	--text-light: var(--gray-600);
 	--text-light-rgb: var(--gray-600-rgb);
 	--text-inverse: var(--white);
