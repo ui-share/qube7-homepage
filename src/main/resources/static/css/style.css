@@ -1,4 +1,3 @@
-
 @charset "utf-8";
 
 
@@ -38,36 +37,8 @@
 	font-style: normal;
 	font-display: swap;
 }
-/*======================================*/
-/* ROOT */
-/*======================================*/
+
 :root {
-	/* 기본 색상 */
-	--white: #FFFFFF;
-	--black: #000000;
-	/* 시스템 컬러 */
-	--color-primary: #5A4FCF;
-	--color-secondary: #4B506A;
-	--color-success: #4B830D;
-	--color-warning: #FFB546;
-	--color-error: #D93B30;
-	/* 배경색 */
-	--color-bg: #FFFFFF;
-	--color-bg-tint: #F7F6FF; /*연보라색*/
-	--color-bg-alt: #FBFBFB;
-	/* 텍스트 색상 */
-	--text-default: #333333;
-	--text-light: #66707A;
-	--text-disabled: #A8B3BD;
-	--text-inverse: #FFFFFF;
-	--text-primary: var(--color-primary);
-	--text-success: var(--color-success);
-	--text-warning: var(--color-warning);
-	--text-error: var(--color-error);
-
-
-
-
 	/* Token variables : 디자인 토큰 */
 	/* 색상 토큰 */
 	--black: #000;
@@ -83,59 +54,71 @@
 	--green-500-rgb: 75,131,13;
 	--yellow-500: #FFB546;
 	--yellow-500-rgb: 255,181,70;
-
+	--violet-500: #5A4FCF;
+	--violet-500-rgb: 90,79,207;
+	
 	/* grayScale */
 	--gray-100: #f8f9fa;
+	--gray-100-rgb: 248,249,250;
 	--gray-200: #e9ecef;
+	--gray-200-rgb: 233,236,239;
 	--gray-300: #dee2e6;
+	--gray-300-rgb: 222,226,230;
 	--gray-400: #ced4da;
+	--gray-400-rgb: 206,212,218;
 	--gray-500: #adb5bd;
-	--gray-600: #6c757d;
-	--gray-700: #495057;
-	--gray-800: #343a40;
-	--gray-900: #212529;	
-
+	--gray-500-rgb: 173,181,189;
+	--gray-600: #66707A;
+	--gray-600-rgb: 102,112,122;
+	--gray-700: #4B506A;
+	--gray-700-rgb: 75,80,106;
+	--gray-800: #333333;
+	--gray-800-rgb: 51,51,51;
+	--gray-900: #222222;
+	--gray-900-rgb: 34,34,34;
+	
+	
 	/* 폰트 토큰 */ 
 	--font-base: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
-	/* Semantic variables : UI 반영 */
-	--color-primary: #5A4FCF;
-	--color-primary-rgb: 90,79,207;
-	--color-secondary: #4B506A;
-	--color-secondary-rgb: 90,79,207;
+	/* Semantic variables : UI */
+	--color-primary: var(--violet-500);
+	--color-primary-rgb: var(--violet-500-rgb);
+	--color-secondary: var(--gray-700);
+	--color-secondary-rgb: var(--gray-700-rgb);
 
-	--color-success: var(--green-500);
-	--color-success-rgb: 90,79,207;
-	--color-danger: var(--red-500);
-	--color-danger-rgb: 90,79,207;
-	--color-warning: var(--yellow-500);
-	--color-warning-rgb: 90,79,207;
+	/* background */
+	--bg-base: var(--white);
+	--bg-base-rgb: var(--white-rgb);
+	--bg-tint: #F7F6FF; /*연보라색*/
+	--bg-tint-rgb: 247,246,255;
+	--bg-alt: #FBFBFB;
+	--bg-alt-rgb: 251,251,251;
 
+	/* font */
+	--text-base: var(--gray-900);
+	--text-base-rgb: var(--gray-900-rgb);
+	--text-light: var(--gray-600);
+	--text-light-rgb: var(--gray-600-rgb);
+	--text-inverse: var(--white);
+	--text-inverse-rgb: var(--white-rgb);
 
+	/* border --border- */
+	/* shadow --shadow- */
 
-	/* 텍스트 색상 ?? 확인 후 삭제*/ 
-	--text-default: #181A1B;
-	--text-light: #66707A;
-	--text-disabled: #A8B3BD;
-	--text-inverse: #FFFFFF;
+/* 효과 */
+	/* radius --border-radius- */
+	--border-radius-sm: 4px;
+  	--border-radius-lg: 12px;	
 
-	--color-bg: var(--white);
-	--color-bg-rgb: var(--white-rgb);
-	--color-bg-alt: #F6F7FC;
-	--color-bg-alt-rgb: 246,247,252;
-
-	--color-text: var(--gray-900);
-	--color-text-rgb: var(--gray-900-rgb);
-	--color-border: var(--gray-300);
-	--color-border-rgb: var(--gray-300-rgb);
-	
-	/* body font */	
+/* 컴포넌트 */
+	/* body  */	
 	--body-font-family: var(--font-base);
 	--body-font-size: 1rem;
 	--body-font-weight: 400;
 	--body-line-height: 1.5;
-	--body-font-color: #181a1b;
-	--body-font-color-rgb: 24,26,27;
+	--body-font-color: var(--text-base);
+	--body-font-color-rgb: var(--text-base-rgb);
 
 
 
@@ -199,11 +182,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-/*======================================*/
-/* Global */
-/*======================================*/
 body {
 	margin: 0;
 	font-family: var(--body-font-family);
@@ -215,10 +193,12 @@ body {
 	background-color: var(--color-bg);
 	-webkit-text-size-adjust: 100%;
 }
-
-/*======================================*/
-/* Common UI */
-/*======================================*/
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+/* common ------------------------------------------------------- */
 /* hidden */
 .hidden, .hide {
 	display: none!important;
@@ -237,17 +217,6 @@ body {
 	font-size: 0!important;
 	opacity: 0!important;
 }
-.bg-tint {
-	background-color: var(--color-bg-tint);
-}
-.bg-alt {
-	background-color: var(--color-bg-alt);
-}
-img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-}
 /* padding */
 .p-0 {
 	padding: 0 !important;
@@ -256,17 +225,26 @@ img {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
-/* col, row의 기본 스타일 */
-.row { /* row: 열 */
+.bg-tint {
+	background-color: var(--color-bg-tint);
+}
+.bg-alt {
+	background-color: var(--color-bg-alt);
+}
+/* row: 열 */
+.row { 
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	gap: 16px;
 }
-.col { /* col: row 안 아이템 균등비율 필요 시*/
+/* col: row 안 아이템 균등비율 필요 시*/
+.col { 
 	flex: 1;
 }
-.column { /* 세로정렬 flex */
+
+/* 세로정렬 flex */
+.column { 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -281,12 +259,7 @@ img {
 	align-items: flex-end;
 	text-align: right;
 }
-
-
-/*======================================*/
-/* Layout */
-/*======================================*/
-/* .section-block의 공통 스타일 */
+/* .section-block 공통 */
 .section-block {
 	width: 100%;
 	max-width: 1580px;
@@ -344,6 +317,7 @@ img {
 
 
 
+/* layout ------------------------------------------------------- */
 /* 헤더 */
 .ic-btn {
 	padding: 0.5rem;
@@ -406,36 +380,6 @@ img {
 	display: none;
 }
 
-
-/* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) { 
-	.navbar-toggler {
-		display: block;
-	}
-	.navbar-nav  {
-		
-		flex-direction: column;
-		margin-left: auto;
-	}
-	.offcanvas {
-		visibility: hidden;
-		width: 100%;
-		max-width: 100%;
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		transform: translateX(100%);
-		z-index: 1025;
-		display: flex;
-		flex-direction: column;		
-		transition: transform 0.3s ease-in-out;
-	}
-	.offcanvas.is-show{
-		visibility: visible;
-		transform: none;
-	}
-}
 /* dropdown */
 .dropdown {
 	position: relative;
@@ -463,4 +407,34 @@ img {
 /* dropdown-menu : Mobile toggle*/
 .dropdown-menu.is-open {
 	display: block;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+	.navbar-toggler {
+		display: block;
+	}
+	.navbar-nav {
+		
+		flex-direction: column;
+		margin-left: auto;
+	}
+	.offcanvas {
+		visibility: hidden;
+		width: 100%;
+		max-width: 100%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		transform: translateX(100%);
+		z-index: 1025;
+		display: flex;
+		flex-direction: column;		
+		transition: transform 0.3s ease-in-out;
+	}
+	.offcanvas.is-show {
+		visibility: visible;
+		transform: none;
+	}
 }
