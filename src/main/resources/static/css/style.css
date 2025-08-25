@@ -1,49 +1,43 @@
-/* box-sizing 초기화 */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, menu, ol, ul, li,
-fieldset, form, label, legend,
-caption, table, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section {
-	display: block;
-}
-menu, ol, ul {
-	list-style: none;
-}
-/* 기타 초기화 */
-a {
-	background-color: transparent;
-	text-decoration: none;
-	color: inherit;
-}
+
+@charset "utf-8";
 
 
+/* Pretendard Font Family 정의 */
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Pretendard";
+	src: url("../../fonts/Pretendard-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
 /*======================================*/
 /* ROOT */
 /*======================================*/
@@ -70,72 +64,189 @@ a {
 	--text-success: var(--color-success);
 	--text-warning: var(--color-warning);
 	--text-error: var(--color-error);
+
+
+
+
+	/* Token variables : 디자인 토큰 */
+	/* 색상 토큰 */
+	--black: #000;
+	--black-rgb: 0,0,0;
+	--white: #fff;
+	--white-rgb: 255,255,255;	
+	
+	--blue-500: #0d6efd;
+	--blue-500-rgb: 13,110,253;
+	--red-500: #D93B30;
+	--red-500-rgb: 217,59,48;
+	--green-500: #4B830D;
+	--green-500-rgb: 75,131,13;
+	--yellow-500: #FFB546;
+	--yellow-500-rgb: 255,181,70;
+
+	/* grayScale */
+	--gray-100: #f8f9fa;
+	--gray-200: #e9ecef;
+	--gray-300: #dee2e6;
+	--gray-400: #ced4da;
+	--gray-500: #adb5bd;
+	--gray-600: #6c757d;
+	--gray-700: #495057;
+	--gray-800: #343a40;
+	--gray-900: #212529;	
+
+	/* 폰트 토큰 */ 
+	--font-base: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+	/* Semantic variables : UI 반영 */
+	--color-primary: #5A4FCF;
+	--color-primary-rgb: 90,79,207;
+	--color-secondary: #4B506A;
+	--color-secondary-rgb: 90,79,207;
+
+	--color-success: var(--green-500);
+	--color-success-rgb: 90,79,207;
+	--color-danger: var(--red-500);
+	--color-danger-rgb: 90,79,207;
+	--color-warning: var(--yellow-500);
+	--color-warning-rgb: 90,79,207;
+
+
+
+	/* 텍스트 색상 ?? 확인 후 삭제*/ 
+	--text-default: #181A1B;
+	--text-light: #66707A;
+	--text-disabled: #A8B3BD;
+	--text-inverse: #FFFFFF;
+
+	--color-bg: var(--white);
+	--color-bg-rgb: var(--white-rgb);
+	--color-bg-alt: #F6F7FC;
+	--color-bg-alt-rgb: 246,247,252;
+
+	--color-text: var(--gray-900);
+	--color-text-rgb: var(--gray-900-rgb);
+	--color-border: var(--gray-300);
+	--color-border-rgb: var(--gray-300-rgb);
+	
+	/* body font */	
+	--body-font-family: var(--font-base);
+	--body-font-size: 1rem;
+	--body-font-weight: 400;
+	--body-line-height: 1.5;
+	--body-font-color: #181a1b;
+	--body-font-color-rgb: 24,26,27;
+
+
+
 }
-/* Pretendard Font Family 정의 */
-@font-face {
-	font-family: "Pretendard";
-	src: url("../fonts/Pretendard-Light.woff2") format("woff2");
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
+/* reboot ------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-@font-face {
-	font-family: "Pretendard";
-	src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-@font-face {
-	font-family: "Pretendard";
-	src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
+*, *::before, *::after {
+	box-sizing: border-box;
 }
-@font-face {
-	font-family: "Pretendard";
-	src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
+:focus {
+	outline-width:medium;
 }
-@font-face {
-	font-family: "Pretendard";
-	src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+a {
+	text-decoration: none;
+	color: inherit;
 }
+img, svg {
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+}
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+button {
+	text-transform: none;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 
 /*======================================*/
 /* Global */
 /*======================================*/
-html,
 body {
-	height: 100%;
-	font-family: 'Pretendard', sans-serif;
-	font-size: 1rem; /* 16px */
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.025em;
-    background-color: var(--color-bg);
-	/* overflow: hidden; */
-}
-img {
-	max-width: 100%;
-	height: auto;
-	display: block;
+	margin: 0;
+	font-family: var(--body-font-family);
+	font-size: var(--body-font-size);
+	font-weight: var(--body-font-weight);
+	line-height: var(--body-line-height);
+	color: var(--body-color);
+	/* letter-spacing: -0.025em; */
+	background-color: var(--color-bg);
+	-webkit-text-size-adjust: 100%;
 }
 
 /*======================================*/
-/* Common */
+/* Common UI */
 /*======================================*/
+/* hidden */
+.hidden, .hide {
+	display: none!important;
+}
+.visually-hidden {
+	position: absolute!important;
+	width: 0!important;
+	height: 0!important;
+	padding: 0!important;
+	margin: -1px!important;
+	overflow: hidden!important;
+	clip: rect(0, 0, 0, 0)!important;
+	white-space: nowrap!important;
+	border: 0!important;
+	color: transparent!important;
+	font-size: 0!important;
+	opacity: 0!important;
+}
 .bg-tint {
 	background-color: var(--color-bg-tint);
 }
 .bg-alt {
 	background-color: var(--color-bg-alt);
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 /* col, row의 기본 스타일 */
 .row { /* row: 열 */
