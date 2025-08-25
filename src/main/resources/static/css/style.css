@@ -62,10 +62,10 @@
 	--gray-100-rgb: 248,249,250;
 	--gray-200: #e9ecef;
 	--gray-200-rgb: 233,236,239;
-	--gray-300: #dee2e6;
-	--gray-300-rgb: 222,226,230;
-	--gray-400: #ced4da;
-	--gray-400-rgb: 206,212,218;
+	--gray-300: #d9d9d9;
+	--gray-300-rgb: 217,217,217;
+	--gray-400: #c3c3c5;
+	--gray-400-rgb: 195,195,197;
 	--gray-500: #adb5bd;
 	--gray-500-rgb: 173,181,189;
 	--gray-600: #66707A;
@@ -114,7 +114,7 @@
 /* 컴포넌트 */
 	/* body  */	
 	--body-font-family: var(--font-base);
-	--body-font-size: 1rem;
+	--body-font-size: 0.7500rem;
 	--body-font-weight: 400;
 	--body-line-height: 1.5;
 	--body-font-color: var(--text-base);
@@ -188,8 +188,7 @@ body {
 	font-size: var(--body-font-size);
 	font-weight: var(--body-font-weight);
 	line-height: var(--body-line-height);
-	color: var(--body-color);
-	/* letter-spacing: -0.025em; */
+	color: var(--body-font-color);
 	background-color: var(--color-bg);
 	-webkit-text-size-adjust: 100%;
 }
@@ -320,7 +319,7 @@ img {
 /* layout ------------------------------------------------------- */
 /* 헤더 */
 .ic-btn {
-	padding: 0.5rem;
+	padding: 1em;
 }
 .header {
 	width: 100%;
@@ -339,12 +338,12 @@ img {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	column-gap: 1rem;
-	row-gap: .75rem;
-	padding: 0 .75rem;
+	column-gap: 1em;
+	row-gap: 1em;
+	padding: 0 1em;
 }
-.header__brand {
-
+.navbar-toggler {
+	display: none;
 }
 .header__content {
 	display: flex;
@@ -358,26 +357,22 @@ img {
 	display: flex;
 	align-items: center;
 }
-.navbar-nav  {
+.navbar-nav {
 	display: flex;
 	align-items: center;
-	column-gap: 4.3750rem;
+	column-gap: 5.8333em;
 	margin-left: auto;
 }
-
-.navbar-nav a {
-	font-size: 1rem;
+.nav-item {
+	padding: 1em .5em;
+}
+.nav-link {
+	font-size: 1.6667em;
 	font-weight: 600;
-	color: #000000;
-	transition: color 0.3s;
-	padding: .5rem;
+	color: var(--gray-400)
 }
-.navbar-nav a:hover {
-	color: #514EA0;
-}
-
-.navbar-toggler {
-	display: none;
+.nav-link:hover {
+	color: var(--color-primary);
 }
 
 /* dropdown */
@@ -386,7 +381,7 @@ img {
 }
 .dropdown-menu {
 	display: none;
-	min-width: 8rem;
+	min-width: 16.3333em;
 	position: absolute;
 	top: 100%;
 	left: 0;
