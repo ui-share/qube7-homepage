@@ -43,23 +43,6 @@ a {
 	color: inherit;
 }
 
-/* global */
-html {
-	font-size: 16px; /* 1rem = 16px */
-}
-html,
-body {
-	height: 100%;
-	font-size: 1rem; /* 16px */
-	line-height: 1.5;
-	margin: 0;
-	/* overflow: hidden; */
-}
-img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-}
 
 /*======================================*/
 /* ROOT */
@@ -76,7 +59,8 @@ img {
 	--color-error: #D93B30;
 	/* 배경색 */
 	--color-bg: #FFFFFF;
-	--color-bg-alt: #F6F7FC;
+	--color-bg-tint: #F7F6FF; /*연보라색*/
+	--color-bg-alt: #FBFBFB;
 	/* 텍스트 색상 */
 	--text-default: #181A1B;
 	--text-light: #66707A;
@@ -90,48 +74,69 @@ img {
 /* Pretendard Font Family 정의 */
 @font-face {
 	font-family: "Pretendard";
-	src: url("../../fonts/Pretendard-Light.woff2") format("woff2");
+	src: url("../fonts/Pretendard-Light.woff2") format("woff2");
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Pretendard";
-	src: url("../../fonts/Pretendard-Regular.woff2") format("woff2");
+	src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Pretendard";
-	src: url("../../fonts/Pretendard-Medium.woff2") format("woff2");
+	src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Pretendard";
-	src: url("../../fonts/Pretendard-SemiBold.woff2") format("woff2");
+	src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Pretendard";
-	src: url("../../fonts/Pretendard-Bold.woff2") format("woff2");
+	src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 
-/* .section-block의 공통 스타일 */
-.section-block {
-	width: 100%;
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 72px 36px;
+/*======================================*/
+/* Global */
+/*======================================*/
+html,
+body {
+	height: 100%;
+	font-family: 'Pretendard', sans-serif;
+	font-size: 1rem; /* 16px */
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    background-color: var(--color-bg);
+	/* overflow: hidden; */
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
+/*======================================*/
+/* Common */
+/*======================================*/
+.bg-tint {
+	background-color: var(--color-bg-tint);
+}
+.bg-alt {
+	background-color: var(--color-bg-alt);
+}
 /* col, row의 기본 스타일 */
 .col {
 	display: flex;
@@ -147,10 +152,24 @@ img {
 	gap: 16px;
 }
 
+
+/*======================================*/
+/* Layout */
+/*======================================*/
+/* .section-block의 공통 스타일 */
+.section-block {
+	width: 100%;
+	max-width: 1580px;
+	margin: 0 auto;
+	padding: 72px 36px;
+}
 .section-title {
 	font-size: 46px;
 	font-weight: 700;
 	color: var(--text-default);
+}
+.section-title-lg {
+	font-size: 52px;
 }
 .section-text {
 	font-size: 26px;
