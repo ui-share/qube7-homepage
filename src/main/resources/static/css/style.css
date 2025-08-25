@@ -69,7 +69,7 @@
 	--gray-500: #adb5bd;
 	--gray-500-rgb: 173,181,189;
 	--gray-600: #666666; /* f */ 
-	--gray-600-rgb: 102,112,122;
+	--gray-600-rgb: 102,102,102;
 	--gray-700: #4B506A;
 	--gray-700-rgb: 75,80,106;
 	--gray-800: #333333; /* f */ 
@@ -109,7 +109,7 @@
 /* 효과 */
 	/* radius --border-radius- */
 	--border-radius-sm: 4px;
-  	--border-radius-lg: 12px;	
+	--border-radius-lg: 12px;	
 
 /* 컴포넌트 */
 	/* body  */	
@@ -193,8 +193,6 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 img {
-	max-width: 100%;
-	height: auto;
 	display: block;
 }
 /* common ------------------------------------------------------- */
@@ -225,10 +223,10 @@ img {
 	padding-right: 0 !important;
 }
 .bg-tint {
-	background-color: var(--color-bg-tint);
+	background-color: var(--bg-tint);
 }
 .bg-alt {
-	background-color: var(--color-bg-alt);
+	background-color: var(--bg-alt);
 }
 /* row: 열 */
 .row { 
@@ -268,20 +266,22 @@ img {
 .section__title {
 	font-size: 46px;
 	font-weight: 700;
-	color: var(--text-default);
+	color: var(--text-base);
 }
 .section__title--lg {
 	font-size: 52px;
 }
 .section__text {
 	font-size: 26px;
-	color: var(--text-default);
+	font-weight: 500;
+	color: var(--text-base);
 }
 .section__text--lg {
 	font-size: 34px;
+	font-weight: 600;
 }
 .text--primary {
-	color: var(--text-primary);
+	color: var(--color-primary);
 }
 .text--gray {
 	color: var(--text-light);
@@ -304,14 +304,30 @@ img {
 	font-weight: 600;
 	color: var(--text-inverse);
 }
-.tag__text--lg {
-	font-size: 32px;
-}
 .tag--ghost {
 	background-color: transparent;
 }
 .tag--ghost .tag__text {
-	color: var(--text-primary);
+	color: var(--color-primary);
+}
+/* 양 옆 가려지는 이미지 */
+.image-wrap--overflow {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	/* 양 옆 흰색 그라데이션 효과 */
+	-webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+	mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.image-wrap--overflow img {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: auto;
+	min-width: 100%;
+	max-width: none;
+	height: auto;
 }
 
 
