@@ -376,6 +376,7 @@ img {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	min-height: 5rem;
 	margin: auto;
 	/* position: sticky; */
@@ -384,13 +385,13 @@ img {
 }
 .header__inner {
 	width: 100%;
-	max-width: 1400px;
+	max-width: 87.5000rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	column-gap: 1em;
 	row-gap: 1em;
-	padding: 0 1em;
+	padding: 0 1.1250rem;
 }
 .navbar-toggler {
 	display: none;
@@ -423,15 +424,18 @@ img {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
+	
 	font-size: 1.2500rem;
 	font-weight: 600;
 	color: var(--gray-400);	
 	padding: 0.3750rem 0;
-	cursor: pointer;	
 }
 .nav-link:hover {
 	color: var(--gray-800);
+	font-weight: 600;
 }
+
 
 /* dropdown */
 .dropdown {
@@ -445,9 +449,9 @@ img {
 	left: 0;
 	border: 1px solid var(--gray-300);
 	background-color: var(--white);
-	padding: 0.5625rem 1.1875rem;
+	padding: 1rem 1.1250rem;
 	border-radius: 0.3750rem;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	box-shadow: var(--shadow-base);
 
 	opacity: 0;
@@ -457,15 +461,18 @@ img {
 }
 .dropdown-menu .nav-link {
 	font-size: 0.8750rem;
-	font-weight: 400;
+	font-weight: 500;
 	color: var(--gray-800);
+}
+.dropdown-menu .nav-link:hover {
+	font-weight: 600;
 }
 
 /* PC hover & JS toggle 공통 */
 .dropdown-menu.is-open {
 	display: flex;
 	flex-direction: column;
-	row-gap: 0.875rem;
+	row-gap: 0.500rem;
 }
 
 /* dropdown-menu : Mobile toggle*/
@@ -478,12 +485,17 @@ img {
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) { 
 	.header {
-		min-height: 3.1250rem;
-		padding: 0.9375 0;
-		margin: auto;
+		min-height: 3.3125rem;
+	}
+	.header__inner {
+		padding: 0 0.5625rem 0 1.2500rem;
+	}
+	.brand-img {
+		width: 4.5000rem;
 	}
 	.navbar-toggler {
 		display: block;
+		width: 2.7500rem;
 	}
 	.navbar-nav {
 		width: 100%;
@@ -495,14 +507,14 @@ img {
 		max-width: 100%;
 		height: 100%;
 		position: fixed;
-		top: 80px;
+		top: 3.3125rem;
 		right: 0;
 		bottom: 0;
 		transform: translateX(100%);
 		
 		background-color: var(--white);
 		border-top: 1px solid rgba(var(--black-rgb), 1);
-		padding: 0 2.0000rem;
+		padding: 0 1.0000rem;
 		display: flex;
 		flex-direction: column;		
 		transition: transform 0.3s ease-in-out;		
@@ -522,14 +534,21 @@ img {
 	
 	.navbar-nav > .nav-item > .nav-link {
 		color: var(--gray-800);
-		padding: 2.0000rem 0;
+		padding: 1.5rem 0;
 	}
 	.dropdown-menu {
 		position: static;
+		min-width: unset;
 		border: none;
 		background-color: var(--gray-100);
 		padding: 1.3750rem 0.6875rem;
 		box-shadow: none ;
+		margin: 0 1rem 1rem;
+	}
+	.dropdown-menu .nav-link {
+		font-size: 1.0625rem;
+		font-weight: 500;
+		color: var(--gray-800);
 	}
 	.navbar-nav > .dropdown > .nav-link:after {
 		display: inline-block;
