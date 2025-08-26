@@ -98,8 +98,8 @@
 	--bg-base-rgb: var(--white-rgb);
 	--bg-tint: var(--violet-50); /*연보라색*/
 	--bg-tint-rgb: var(--violet-50-rgb);
-	--bg-alt: var(--gray-50);
-	--bg-alt-rgb: var(--gray-50-rgb);
+	--bg-alt: var(--gray-100);
+	--bg-alt-rgb: var(--gray-100-rgb);
 	--bg-yellow: var(--yellow-100); /*연노란색*/
 	--bg-yellow-rgb: var(--yellow-100-rgb);
 
@@ -252,14 +252,14 @@ img {
 	background: linear-gradient(to bottom, var(--yellow-200), var(--yellow-100));
 }
 .bg-grad-yg {
-	background: -webkit-linear-gradient(top, var(--yellow-100), var(--gray-50));
-	background: -moz-linear-gradient(top, var(--yellow-100), var(--gray-50));
-	background: linear-gradient(to bottom, var(--yellow-100), var(--gray-50));
+	background: -webkit-linear-gradient(top, var(--yellow-100), var(--gray-100));
+	background: -moz-linear-gradient(top, var(--yellow-100), var(--gray-100));
+	background: linear-gradient(to bottom, var(--yellow-100), var(--gray-100));
 }
 .bg-grad-gy {
-	background: -webkit-linear-gradient(top, var(--gray-50), var(--yellow-100));
-	background: -moz-linear-gradient(top, var(--gray-50), var(--yellow-100));
-	background: linear-gradient(to bottom, var(--gray-50), var(--yellow-100));
+	background: -webkit-linear-gradient(top, var(--gray-100), var(--yellow-100));
+	background: -moz-linear-gradient(top, var(--gray-100), var(--yellow-100));
+	background: linear-gradient(to bottom, var(--gray-100), var(--yellow-100));
 }
 
 /* row: 열 */
@@ -272,6 +272,9 @@ img {
 /* col: row 안 아이템 균등비율 필요 시*/
 .col { 
 	flex: 1;
+}
+.row-reverse {
+	flex-direction: row-reverse;
 }
 
 /* 세로정렬 flex */
@@ -344,16 +347,34 @@ img {
 .tag--ghost .tag__text {
 	color: var(--color-primary);
 }
+
+.img.mo {
+	display: none; /* 모바일 이미지 안보이게 */
+}
 /* 양 옆 가려지는 이미지 */
 .image-wrap--overflow {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	/* 양 옆 흰색 그라데이션 효과 */
-	-webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
-	mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
 }
-
+.image-wrap--overflow::before,
+.image-wrap--overflow::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100px;       /* 그라데이션의 폭 조정 가능 */
+	pointer-events: none;
+	z-index: 1;
+}
+.image-wrap--overflow::before {
+	left: 0;
+	background: linear-gradient(to right, var(--white), transparent);
+}
+.image-wrap--overflow::after {
+	right: 0;
+	background: linear-gradient(to left, var(--white), transparent);
+}
 .image-wrap--overflow img {
 	position: relative;
 	left: 50%;
@@ -363,6 +384,7 @@ img {
 	max-width: none;
 	height: auto;
 }
+
 
 
 
@@ -479,7 +501,7 @@ img {
 .dropdown-menu.is-open {
 	opacity: 1;
 	visibility: visible;
- 	transform: translateY(0);
+	transform: translateY(0);
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -575,7 +597,62 @@ img {
 @media (max-width: 480px) { }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) { }
+@media (max-width: 576px) {
+	/* row, column 정렬 변경 */
+	.row {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.column {
+		gap: 16px;
+	}
+	.column-end, .column-start {
+		align-items: center;
+		text-align: center;
+	}
+	.section-block {
+		padding: 42px 26px;
+	}
+	/* section 텍스트 크기 */
+	.section__title {
+		font-size: 20px;
+	}
+	.section__title--lg {
+		font-size: 20px;
+	}  
+	.section__text {
+		font-size: 12px;
+	}
+	.section__text--lg {
+		font-size: 20px;
+	}
+	.bg-tint .section__title {
+		font-size: 14px;
+	}
+	.text-wrap.column {
+		gap: 8px;
+	}
+
+	/* tag 텍스트 크기*/
+	.tag {
+		padding: 0.5rem 1rem;
+	}
+	.tag__text {
+		font-size: 12px;
+	}
+
+	/* PC/MO 이미지 체인지 */
+	.img.mo {
+		display: block; /* 모바일 이미지 보이게 */
+	}
+	.img.pc {
+		display: none; /* 모바일 이미지 안보이게 */
+	}
+	.img.logo {
+		max-width: 188px;
+	}
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) { }
