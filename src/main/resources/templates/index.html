@@ -6,8 +6,23 @@
 <body>
 <main layout:fragment="content">
 	<div class="section">
-		<!-- slide -->
-		<!-- /slide -->
+		<!-- Swiper -->
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img class="img" th:src="@{/images/main_slideImg01.png}" alt="회사소개 배너">
+				</div>
+				<div class="swiper-slide">
+					<img class="img" th:src="@{/images/main_slideImg03.png}" alt="서비스소개 배너">
+				</div>
+				<div class="swiper-slide">
+					<img class="img" th:src="@{/images/main_slideImg02.png}" alt="기업문화 배너">
+				</div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		</div>
 	</div>
 	<div class="section">
 		<div class="section-block column">
@@ -61,6 +76,25 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		var swiper = new Swiper(".mainSwiper", {
+		cssMode: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		mousewheel: true,
+		keyboard: true,
+		});
+	</script>
 </main>
 </body>
 </html>

@@ -129,9 +129,8 @@
 	--body-font-color: var(--text-base);
 	--body-font-color-rgb: var(--text-base-rgb);
 
-
-
 }
+
 /* reboot ------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -611,9 +610,6 @@ img {
 	
 }
 /* Footer */
-
-
-
 .footer {
 	position: relative;
 	width: 100%;
@@ -627,7 +623,6 @@ img {
 	border-top: 1px solid var(--gray-300);
 	padding: 5rem 0;
 }
-
 .footer__inner {
 	width: 100%;
 	max-width: 87.5000rem;
@@ -637,8 +632,6 @@ img {
 	display: flex;
 	flex-direction: column;
 }
-
-
 .footer__company {
 	
 	font-size: 20px;
