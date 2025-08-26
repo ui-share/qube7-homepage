@@ -13,7 +13,7 @@ public class PageController {
 		model.addAttribute("pageDescription", "한 주의 일상적 가치를 스캔하다. 주식회사 큐브7 입니다. ");
 		model.addAttribute("pageImage", "https://www.qube7.co.kr/images/og/ogimage.png");
 		model.addAttribute("pageUrl", "https://www.qube7.co.kr/");
-		return "home";
+		return "index";
 	}
 
 	@GetMapping("/about")
