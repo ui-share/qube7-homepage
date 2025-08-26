@@ -52,12 +52,20 @@
 	--red-500-rgb: 217,59,48;
 	--green-500: #4B830D;
 	--green-500-rgb: 75,131,13;
+	--yellow-100: #FFFBF1;
+	--yellow-100-rgb: 255, 251, 241;
+	--yellow-200: #FBF1D4;
+	--yellow-200-rgb: 251, 241, 212;
 	--yellow-500: #FFB546;
 	--yellow-500-rgb: 255,181,70;
+	--violet-50: #F7F6FF; /*연보라색*/
+	--violet-50-rgb: 247,246,255;
 	--violet-500: #5A4FCF; /* f */ 
 	--violet-500-rgb: 90,79,207;
 	
 	/* grayScale */
+	--gray-50: #fbfbfb;
+	--gray-50-rgb: 251, 251, 251;
 	--gray-100: #f8f9fa;
 	--gray-100-rgb: 248,249,250;
 	--gray-200: #e9ecef;
@@ -90,10 +98,12 @@
 	/* background */
 	--bg-base: var(--white);
 	--bg-base-rgb: var(--white-rgb);
-	--bg-tint: #F7F6FF; /*연보라색*/
-	--bg-tint-rgb: 247,246,255;
-	--bg-alt: #FBFBFB;
-	--bg-alt-rgb: 251,251,251;
+	--bg-tint: var(--violet-50); /*연보라색*/
+	--bg-tint-rgb: var(--violet-50-rgb);
+	--bg-alt: var(--gray-50);
+	--bg-alt-rgb: var(--gray-50-rgb);
+	--bg-yellow: var(--yellow-100); /*연노란색*/
+	--bg-yellow-rgb: var(--yellow-100-rgb);
 
 	/* font */
 	--text-base: var(--gray-800);
@@ -222,12 +232,37 @@ img {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+/* background */
 .bg-tint {
 	background-color: var(--bg-tint);
 }
 .bg-alt {
 	background-color: var(--bg-alt);
 }
+.bg-yellow {
+	background-color: var(--bg-yellow);
+}
+.bg-grad-wy {
+	background: -webkit-linear-gradient(top, var(--white), var(--yellow-200));
+	background: -moz-linear-gradient(top, var(--white), var(--yellow-200));
+	background: linear-gradient(to bottom, var(--white), var(--yellow-200));
+}
+.bg-grad-yy {
+	background: -webkit-linear-gradient(top, var(--yellow-200), var(--yellow-100));
+	background: -moz-linear-gradient(top, var(--yellow-200), var(--yellow-100));
+	background: linear-gradient(to bottom, var(--yellow-200), var(--yellow-100));
+}
+.bg-grad-yg {
+	background: -webkit-linear-gradient(top, var(--yellow-100), var(--gray-50));
+	background: -moz-linear-gradient(top, var(--yellow-100), var(--gray-50));
+	background: linear-gradient(to bottom, var(--yellow-100), var(--gray-50));
+}
+.bg-grad-gy {
+	background: -webkit-linear-gradient(top, var(--gray-50), var(--yellow-100));
+	background: -moz-linear-gradient(top, var(--gray-50), var(--yellow-100));
+	background: linear-gradient(to bottom, var(--gray-50), var(--yellow-100));
+}
+
 /* row: 열 */
 .row { 
 	display: flex;
@@ -261,7 +296,7 @@ img {
 	width: 100%;
 	max-width: 1580px;
 	margin: 0 auto;
-	padding: 72px 36px;
+	padding: 72px 54px;
 }
 .section__title {
 	font-size: 46px;
