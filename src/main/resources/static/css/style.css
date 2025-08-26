@@ -590,6 +590,67 @@ img {
 	}
 	
 }
+/* Footer */
+
+
+
+.footer {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: var(--gray-100);
+	color: var(--gray-600);
+	font-weight: 400;
+	border-top: 1px solid var(--gray-300);
+	padding: 5rem 0;
+}
+
+.footer__inner {
+	width: 100%;
+	max-width: 87.5000rem;
+	padding: 0 20px;
+}
+.footer__content {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.footer__company {
+	
+	font-size: 20px;
+	font-weight: 700;
+	margin: 16px 0 10px;
+}
+.footer__addr {
+	font-size: 18px;
+	margin: 0 0 18px;
+}
+
+.footer__addr b { 
+	font-weight: 600; 
+}
+
+.footer__line {
+	display: block; 
+}
+
+.footer__copy {
+	
+	font-size: 16px;
+	margin: 18px 0 0;
+}
+
+/* 작은 화면 대응 */
+@media (max-width: 480px) {
+  .site-footer { padding: 22px 0 32px; }
+  .site-footer__company { font-size: 18px; }
+  .site-footer__addr { font-size: 16px; line-height: 1.65; }
+  .site-footer__copy { font-size: 14px; }
+}
 
 
 /* -- 중단점 : PC first ----------- */

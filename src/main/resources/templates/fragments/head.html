@@ -17,21 +17,19 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" th:content="${pageTitle} ?: '주식회사 큐브7'">
 	<meta property="og:description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
-	<meta property="og:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/main_background.png'">
+	<meta property="og:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/ogimage.png'">
 	<meta property="og:url" th:content="${pageUrl} ?: 'https://www.qube7.co.kr'">
 
 	<!-- [ OPTIONAL ] Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" th:content="${pageTitle} ?: '주식회사 큐브7'">
 	<meta name="twitter:description" th:content="${pageDescription} ?: '한 주의 일상적 가치를 스캔하다.'">
-	<meta name="twitter:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/main_background.png'">
+	<meta name="twitter:image" th:content="${pageImage} ?: 'https://www.qube7.co.kr/images/ogimage.png'">
 
-	
 
 	<!-- STYLESHEETS -->
-	<!-- [ REQUIRED ] Bootstrap -->
-	
 	<!-- [ REQUIRED ] q7 -->
+	<link rel="stylesheet" th:href="@{/vendors/swiper/swiper-bundle.min.css}">
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 </html>
