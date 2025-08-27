@@ -220,6 +220,13 @@ img {
 	font-size: 0!important;
 	opacity: 0!important;
 }
+/* pc, mo change 용 */
+.pc-only {
+	display: block;
+}
+.mo-only {
+	display: none;
+}
 /* padding */
 .p-0 {
 	padding: 0 !important;
@@ -227,9 +234,6 @@ img {
 .px-0 {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-}
-.pb-0 {
-	padding-bottom: 0 !important;
 }
 /* background */
 .bg-tint {
@@ -351,7 +355,7 @@ img {
 }
 
 /* button */
-button, .btn {
+.btn {
 	min-width: 320px;
 	font-size: 20px;
 	font-weight: 600;
@@ -672,6 +676,19 @@ button, .btn {
 
 
 /* page ------------------------------------------------------- */
+/* page : index */
+/* index 내 slide를 제외한 제일 첫 section */
+.intro-section .section-block { 
+	padding-bottom: 0;
+}
+.intro-section .logo {
+	width: 400px;
+}
+.intro-section .section-block > .section-block {
+	background: -webkit-linear-gradient(top, var(--white), var(--yellow-200));
+	background: -moz-linear-gradient(top, var(--white), var(--yellow-200));
+	background: linear-gradient(to bottom, var(--white), var(--yellow-200));
+}
 /* page : culture, about */
 .bg-img {
 	height: 640px;
@@ -688,7 +705,21 @@ button, .btn {
 .bg-img .section__title {
 	color: var(--text-inverse);
 }
-/* service > app */
+/* page : about */
+/* history : 연혁 */
+.history-year {
+	font-size: 32px;
+	font-weight: 700;
+}
+.history-list {
+	font-size: 26px;
+	font-weight: 500;
+}
+.history-list .month {
+	font-weight: 700;
+	margin-right: 14px;
+}
+/* page : service > app */
 .img.mo {
 	display: none; /* 모바일 이미지 안보이게 */
 }
@@ -728,6 +759,27 @@ button, .btn {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
+	/* pc, mo change 용 */
+	.pc-only {
+		display: none;
+	}
+	.mo-only {
+		display: block;
+	}
+	/* img logo 공통 */
+		.img.logo {
+			width: 188px;
+		}
+	/* page : index */
+	/* index 내 slide를 제외한 제일 첫 section */
+	.intro-section { 
+		background: -webkit-linear-gradient(top, var(--white), var(--yellow-200));
+		background: -moz-linear-gradient(top, var(--white), var(--yellow-200));
+		background: linear-gradient(to bottom, var(--white), var(--yellow-200));
+	}
+	.intro-section .section-block > .section-block {
+		background: unset;
+}
 	/* page : culture, about */
 	.bg-img {
 		height: 360px;
@@ -735,16 +787,23 @@ button, .btn {
 	.bg-img .section__text--lg {
 		font-size: 14px;
 	}
-	/* page: service > app */
-	/* PC/MO 이미지 체인지 */
-	.img.mo {
-		display: block; /* 모바일 이미지 보이게 */
+	/* page : about */
+	/* history : 연혁 */
+	.history.column-start {
+		align-items: start;
+		text-align: left;
 	}
-	.img.pc {
-		display: none; /* 모바일 이미지 안보이게 */
+	.history-year {
+		font-size: 16px;
+		font-weight: 700;
 	}
-	.img.logo {
-		width: 188px;
+	.history-list {
+		font-size: 12px;
+		font-weight: 500;
+	}
+	.history-list .month {
+		font-weight: 700;
+		margin-right: 14px;
 	}
 }
 
