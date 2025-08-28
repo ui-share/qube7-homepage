@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarToggler = document.querySelector(".navbar-toggler");
   const offcanvas = document.querySelector("#mainNavbar");
 
-  // PC Hover    
+  /* -------------------------
+   * Navigation (Header)
+   * ------------------------- */
+
+  // PC Hover
   function handleDesktopMenu(item) {
     const link = item.querySelector(".nav-link");
     const submenu = item.querySelector(".dropdown-menu");
@@ -26,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Mobile Click 
+  // Mobile Click
   function handleMobileMenu(item) {
     const link = item.querySelector(".nav-link");
     const submenu = item.querySelector(".dropdown-menu");
@@ -38,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const isOpen = submenu.classList.contains("is-open");
 
-        // 이미 열려있으면 → 닫기
         if (isOpen) {
           submenu.classList.remove("is-open");
           link.classList.remove("is-active");
@@ -46,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
 
-        // 닫혀있으면 → 다른 메뉴 닫고 자신 열기
         closeAllDropdowns();
         submenu.classList.add("is-open");
         link.classList.add("is-active");
@@ -72,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (offcanvas) {
       offcanvas.classList.remove("is-show");
     }
+    document.body.style.overflow = ""; // 항상 스크롤 복원
   }
 
   // 바인딩
@@ -84,15 +87,22 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastWidth = window.innerWidth;
   window.addEventListener("resize", () => {
     const currentWidth = window.innerWidth;
-    if ((lastWidth > 991 && currentWidth <= 991) || (lastWidth <= 991 && currentWidth > 991)) {
+    if (
+      (lastWidth > 991 && currentWidth <= 991) ||
+      (lastWidth <= 991 && currentWidth > 991)
+    ) {
       resetMenus();
     }
     lastWidth = currentWidth;
   });
 
-  // 외부 클릭
+  // 외부 클릭 → 드롭다운 닫기
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".nav-item.dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
+    if (
+      !e.target.closest(".nav-item.dropdown") &&
+      !e.target.closest(".navbar-toggler") &&
+      !e.target.closest("#mainNavbar")
+    ) {
       closeAllDropdowns();
     }
   });
@@ -102,10 +112,38 @@ document.addEventListener("DOMContentLoaded", function () {
     navbarToggler.addEventListener("click", () => {
       if (window.innerWidth <= 991) {
         offcanvas.classList.toggle("is-show");
+
         if (offcanvas.classList.contains("is-show")) {
           closeAllDropdowns();
+          document.body.style.overflow = "hidden"; //  스크롤 막기
+        } else {
+          document.body.style.overflow = ""; //  스크롤 복원
         }
       }
     });
+  }
+
+  /* -------------------------
+   * Swiper (Main Visual)
+   * ------------------------- */
+  if (document.querySelector(".mainSwiper")) {
+    var swiper = new Swiper(".mainSwiper", {
+      cssMode: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+    console.log("Swiper initialized:", swiper);
   }
 });
